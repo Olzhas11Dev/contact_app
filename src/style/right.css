@@ -1,0 +1,18 @@
+.rightBar_main {
+  width: 80%;
+  padding-top: 20px;
+  background: #d9e9e5;
+}
+
+.rightBar_main h4 {
+  padding-left: 40px;
+  color: #2f223d;
+  margin-bottom: 60px;
+}
+
+.card_row {
+  width: 95%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}

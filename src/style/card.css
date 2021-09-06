@@ -1,0 +1,64 @@
+.card_item {
+  margin: 10px;
+  width: 27%;
+  height: 260px;
+  background: white;
+  padding: 20px;
+  border-radius: 4px;
+  position: relative;
+}
+
+.card_avaSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 10px;
+  border-radius: 50%;
+  font-weight: 700;
+  color: white;
+}
+
+.card_firstName {
+  color: #2f223d;
+  font-weight: 700;
+}
+
+.card_contact_details {
+  margin-top: 50px;
+}
+
+.phone_section,
+.phone_section,
+.address_section {
+  font-size: 14px;
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+
+.title_details {
+  font-weight: 600;
+  color: rgb(180, 180, 180);
+}
+
+.address_det {
+  font-size: 12px;
+}
+
+.icon_trash {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #e6783b;
+  cursor: pointer;
+}
