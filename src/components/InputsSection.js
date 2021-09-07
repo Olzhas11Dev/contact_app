@@ -1,7 +1,8 @@
-import React,{ useState }from 'react'
+import React,{ useState,useEffect }from 'react'
 import '../style/inputSection.css'
-import {useDispatch} from 'react-redux'
+import {useDispatch,useSelector} from 'react-redux'
 import {addToCard} from './features/cardSlice'
+import {increment} from './features/colorSlice'
 
 // const myColors = ['#E6783B','#2C8E88','#6B81AD','#2F223D']
 
@@ -15,13 +16,15 @@ const[note,setNote] = useState('')
 const[notice,setNotice] = useState(false)
 const[alert,setAlert] = useState(false)
 
+const select = useSelector(state => state.increment.getColors)
 const dispatch = useDispatch()
 
 const addData = ()=>{
-    if(!name || !email){
+    if(!name){
         setAlert(true)
     } else{
         setAlert(false)
+        dispatch(increment(1))
         dispatch(addToCard(
             {
                 id:new Date().toISOString(),
@@ -29,14 +32,15 @@ const addData = ()=>{
                 email:email,
                 mobile:phone,
                 address:address,
-                note:note
+                note:note,
+                color:select
             }
         ))
-
-        setNotice(true)
-        setInterval(() => {
+        
+            setNotice(true)
+            setInterval(() => {
             setNotice(false)
-        }, 2000);
+            }, 2000);
     }
  
     setName('')

@@ -1,15 +1,19 @@
 import React from 'react'
 import '../style/card.css'
 import {RiDeleteBin6Line} from 'react-icons/ri'
+import {useDispatch} from'react-redux'
+import {removeItem} from './features/cardSlice'
 //const myColors = ['#E6783B','#2C8E88','#6B81AD','#2F223D']
 
 
 function Card({item}) {
 
+     const dispatch = useDispatch()
+     
     return (
         <div className='card_item' >
             <div  className="card_avaSection">
-                <div style={{background:item.color}} className="logoName">{item.firstName[0]}</div>
+                <div style={{background:!item.color? '#2C8E88' : item.color}} className="logoName">{item.firstName[0]}</div>
                 <div className= "card_firstName">{item.firstName}</div>
             </div>
             <div className="card_contact_details">
@@ -31,7 +35,7 @@ function Card({item}) {
                 </div>
             </div>
            
-            <div className='icon_trash'><RiDeleteBin6Line/></div>
+            <div  onClick={()=>dispatch(removeItem({id:item.id}))} className='icon_trash'><RiDeleteBin6Line/></div>
         </div>
     )
 }

@@ -56,17 +56,13 @@ const cardSlice = createSlice({
     reducers: {
         addToCard : (state,action) =>{
             state.cardStorage.push(action.payload)              //state=InitialState 
+        },
+        removeItem : (state,action) =>{
+            state.cardStorage = state.cardStorage.filter((elem)=>elem.id!==action.payload.id)
         }
     }
 });
 
-export const { addToCard } = cardSlice.actions
+export const { addToCard,removeItem } = cardSlice.actions
 export default cardSlice.reducer   // to send to store
 
-// id: new Date().toISOString(),
-// firstName : action.payload.name,
-// email: action.payload,
-// mobile: action.payload,
-// address: action.payload,
-// note: action.payload,
-// color:action.payload

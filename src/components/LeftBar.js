@@ -4,7 +4,10 @@ import {Link} from 'react-router-dom'
 import {RiContactsFill} from 'react-icons/ri'
 import {BiMessageSquareAdd} from 'react-icons/bi'
 
+
+
 function LeftBar() {
+
     return (
         <div className='leftBar_main' >
            <h4>List Contacts</h4>
