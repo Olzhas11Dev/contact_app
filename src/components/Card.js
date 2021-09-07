@@ -1,11 +1,11 @@
-import React,{ useEffect,useState } from 'react'
+import React from 'react'
 import '../style/card.css'
 import {RiDeleteBin6Line} from 'react-icons/ri'
-const myColors = ['#E6783B','#2C8E88','#6B81AD','#2F223D']
+//const myColors = ['#E6783B','#2C8E88','#6B81AD','#2F223D']
 
 
 function Card({item}) {
-const[index,setIndex] = useState(0)
+
     return (
         <div className='card_item' >
             <div  className="card_avaSection">

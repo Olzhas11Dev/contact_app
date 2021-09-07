@@ -32,10 +32,18 @@
   background: #e6783b;
   border-radius: 4px;
   color: white;
-  cursor: pointer;
+
   transition: 0.1s ease-in;
 }
 
 .input_content button:hover {
   background: #db6526;
+  cursor: pointer;
+}
+
+.input_alert,
+.addName_alert {
+  font-weight: 500;
+  margin-top: 10px;
+  color: #2f223d;
 }

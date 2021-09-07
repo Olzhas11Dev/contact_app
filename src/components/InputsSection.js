@@ -1,17 +1,64 @@
-import React from 'react'
+import React,{ useState }from 'react'
 import '../style/inputSection.css'
+import {useDispatch} from 'react-redux'
+import {addToCard} from './features/cardSlice'
+
+// const myColors = ['#E6783B','#2C8E88','#6B81AD','#2F223D']
 
 function InputsSection() {
+
+const[name,setName] = useState('')
+const[email,setEmail] = useState('')
+const[phone,setPhone] = useState('')
+const[address,setAddress] = useState('')
+const[note,setNote] = useState('')
+const[notice,setNotice] = useState(false)
+const[alert,setAlert] = useState(false)
+
+const dispatch = useDispatch()
+
+const addData = ()=>{
+    if(!name || !email){
+        setAlert(true)
+    } else{
+        setAlert(false)
+        dispatch(addToCard(
+            {
+                id:new Date().toISOString(),
+                firstName:name,
+                email:email,
+                mobile:phone,
+                address:address,
+                note:note
+            }
+        ))
+
+        setNotice(true)
+        setInterval(() => {
+            setNotice(false)
+        }, 2000);
+    }
+ 
+    setName('')
+    setEmail('')
+    setPhone('')
+    setAddress('')
+    setNote('')
+}
+
     return (
         <div className='inputSection_main'>
            <h4>Add a New Contact</h4> 
            <div className="input_content">
-               <input type="text" placeholder='Enter Name' />
-               <input type="text" placeholder='Phone Number' />
-               <input type="text" placeholder='Address' />
-               <input type="text" placeholder='Note' />
-               <button>Add Contact</button>
-           </div>
+                <input style={{border:alert ? 'red 1px solid ': ''}} onChange={(e)=>setName(e.target.value)} type="text" placeholder='Enter Name' value={name}/>
+                <input onChange={(e)=>setEmail(e.target.value)} type="text" placeholder='Email' value={email}/>
+                <input onChange={(e)=>setPhone(e.target.value)}type="text" placeholder='Phone Number' value={phone} />
+                <input onChange={(e)=>setAddress(e.target.value)}type="text" placeholder='Address' value={address}/>
+                <input onChange={(e)=>setNote(e.target.value)}type="text" placeholder='Note' value={note}/>
+                <button onClick={addData} >Add Contact</button>
+            </div>
+            {notice ? <div className='input_alert' >The contact has been added </div>: null}
+            {alert ? <div className='addName_alert' >Please at least add a name </div>: null}
         </div>
     )
 }

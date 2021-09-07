@@ -43,7 +43,7 @@ const data = [
         address:'Wellington CBD',
         note: "Mission Ready Student",
         color: '#E6783B'
-    },
+    }
    
 ]
 

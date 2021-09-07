@@ -4,10 +4,19 @@
   background: #d9e9e5;
 }
 
+.rightBar_topDetails {
+  display: flex;
+  justify-content: space-between;
+}
+
 .rightBar_main h4 {
   padding-left: 40px;
   color: #2f223d;
   margin-bottom: 60px;
+}
+
+.right_total {
+  padding-right: 40px;
 }
 
 .card_row {

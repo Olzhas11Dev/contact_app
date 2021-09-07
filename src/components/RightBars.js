@@ -1,18 +1,23 @@
-import React,{ useState } from 'react'
+import React from 'react'
 import '../style/right.css'
 import Card from './Card'
-import data from '../data'
+// import data from '../data'
+import { useSelector } from "react-redux";
 
 
-const myColors = ['#E6783B','#2C8E88','#6B81AD','#2F223D']
 
 
 function RightBars() {
+    const cards = useSelector(state => state.cards.cardStorage)
+
     return (
         <div className='rightBar_main' >
-           <h4>Contacts</h4> 
+            <div className='rightBar_topDetails' >
+                <h4>Contacts</h4> 
+                <h4 className='right_total' > Total : {cards.length} contacts</h4>
+           </div>
             <div className="card_row">
-                {data.map((item)=>{
+                {cards.map((item)=>{
                     return (
                     <Card key={item.id} item={item}/>
                     )
