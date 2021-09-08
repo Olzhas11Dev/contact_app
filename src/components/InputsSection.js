@@ -19,6 +19,18 @@ const[alert,setAlert] = useState(false)
 const select = useSelector(state => state.increment.getColors)
 const dispatch = useDispatch()
 
+// Get rif of unmount problem
+
+useEffect(()=>{
+    let myInteval = setInterval(() => {
+            setNotice(false)
+        }, 4000);
+
+        return () =>{
+            clearInterval(myInteval)    // Clean It to unmount
+        }
+},[])
+
 const addData = ()=>{
     if(!name){
         setAlert(true)
@@ -36,13 +48,8 @@ const addData = ()=>{
                 color:select
             }
         ))
-        
-            setNotice(true)
-            setInterval(() => {
-            setNotice(false)
-            }, 2000);
+        setNotice(true)    
     }
- 
     setName('')
     setEmail('')
     setPhone('')

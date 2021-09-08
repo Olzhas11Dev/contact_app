@@ -32,3 +32,7 @@
   align-items: center;
   height: 50px;
 }
+
+#active_menu {
+  background: rgba(44, 142, 136, 0.2);
+}

@@ -6,13 +6,14 @@ import InputsSection from "./components/InputsSection";
 
 
 function App() {
+
   return (
     <div className="App">
       <LeftBar/>
           <Switch>
             <Route exact path='/' component={RightBars} >
             </Route>
-            <Route exact path='/add' component={InputsSection} />
+            <Route  exact path='/add' component={InputsSection} />
           </Switch>
     </div>
   );
