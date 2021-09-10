@@ -5,17 +5,19 @@ import Card from './Card'
 import { useSelector } from "react-redux";
 
 
-
-
 function RightBars() {
     const cards = useSelector(state => state.cards.cardStorage)
 
     return (
         <div className='rightBar_main' >
+            <div className='mask'></div>
             <div className='rightBar_topDetails' >
-                <h4>Contacts</h4> 
+                <div>
+                    <input className='rightInput' placeholder='Search' type="text"/>
+                </div>
                 <h4 className='right_total' > Total : {cards.length} contacts</h4>
            </div>
+           
             <div className="card_row">
                 {cards.map((item)=>{
                     return (

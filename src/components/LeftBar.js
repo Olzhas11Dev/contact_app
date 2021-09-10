@@ -3,11 +3,23 @@ import '../style/left.css'
 import {Link, useHistory} from 'react-router-dom'
 import {RiContactsFill} from 'react-icons/ri'
 import {BiMessageSquareAdd} from 'react-icons/bi'
+import {GrMenu} from 'react-icons/gr'
 
 
 function LeftBar() {
 const[activePage,setActivePage] = useState('/')      //By defalt it's stays on the first
 
+const[toggle,setToggle] = useState(false)
+
+let closeMenu=()=>{
+    if(window.innerWidth<800){
+        setToggle(false)
+    } 
+}
+
+window.addEventListener('resize',closeMenu)
+
+// To refresh page '/' router
 const history = useHistory()
 useEffect(()=>{
     history.push('/')
@@ -16,14 +28,18 @@ useEffect(()=>{
 const addId =(route)=>{
     if(route==='/'){
         setActivePage('/')
-        
+        setToggle(false)
     } else {
         setActivePage('/add')
+        setToggle(false)
     }
 }
+
+
    
     return (
-        <div className='leftBar_main' >
+        <div className='leftBar_main' id={toggle ? 'moveRight' : 'moveLeft'} >
+             <div onClick={()=>setToggle(!toggle)} className="leftBar_logo"><GrMenu  className='logoMenu_open' /></div> 
            <h4>List Contacts</h4>
             <Link onClick={()=>addId('/')} to ="/" className="leftBar_contact">
                 <div id={activePage==='/'? 'active_menu' : null} className="left_content_section"  >
@@ -37,7 +53,7 @@ const addId =(route)=>{
                     <div className="right_createContact">Create contact</div>
                 </div> 
             </Link>
-        </div>
+            </div>
     )
 }
 

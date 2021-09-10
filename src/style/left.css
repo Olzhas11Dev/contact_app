@@ -3,6 +3,7 @@
   min-height: 100vh;
   background: #f8f5f4;
   padding-top: 20px;
+  position: relative;
 }
 
 .leftBar_main h4 {
@@ -35,4 +36,37 @@
 
 #active_menu {
   background: rgba(44, 142, 136, 0.2);
+}
+
+.logoMenu_open {
+  width: 30px;
+  height: 30px;
+  display: none;
+}
+
+.leftBar_logo {
+  position: absolute;
+  right: -40px;
+}
+
+@media (max-width: 800px) {
+  .leftBar_main {
+    position: absolute;
+    left: -157px;
+    z-index: 99;
+  }
+  .logoMenu_open {
+    display: block;
+  }
+
+  #moveRight {
+    left: -0;
+    min-width: 50%;
+    transition: 0.5s linear;
+  }
+
+  #moveLeft {
+    left: -157px;
+    transition: 0.5s linear;
+  }
 }

@@ -62,3 +62,23 @@
   color: #e6783b;
   cursor: pointer;
 }
+
+/* Media */
+@media (max-width: 1200px) {
+  .card_item {
+    width: 40%;
+  }
+}
+
+@media (max-width: 600px) {
+  .card_item {
+    width: 60%;
+    margin: 10px auto;
+  }
+}
+
+@media (max-width: 380px) {
+  .card_item {
+    width: 80%;
+  }
+}
