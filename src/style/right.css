@@ -6,13 +6,14 @@
 
 .rightBar_topDetails {
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  margin-bottom: 40px;
 }
 
 .rightBar_main h4 {
   padding-left: 40px;
   color: #2f223d;
-  margin-bottom: 60px;
 }
 
 .right_total {
@@ -40,13 +41,32 @@
 
 /* Media */
 
+.rightBar_input_section {
+  display: flex;
+  align-items: center;
+}
 .rightInput {
   padding: 10px;
+  padding-left: 30px;
   outline: none;
-  margin-left: 40px;
-  width: 280px;
+  margin-left: 22px;
+  width: 260px;
   border-radius: 4px;
   border: none;
+}
+
+.rightBar_close {
+  position: relative;
+  bottom: 0;
+  left: -24px;
+  opacity: 0.7 !important;
+  cursor: pointer;
+}
+
+.right_logo_search {
+  position: relative;
+  left: 45px;
+  opacity: 0.3 !important;
 }
 
 @media (max-width: 800px) {

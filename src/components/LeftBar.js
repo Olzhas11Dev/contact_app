@@ -20,6 +20,7 @@ let closeMenu=()=>{
 window.addEventListener('resize',closeMenu)
 
 // To refresh page '/' router
+
 const history = useHistory()
 useEffect(()=>{
     history.push('/')
