@@ -49,6 +49,26 @@
   right: -40px;
 }
 
+.loginSection {
+  width: 100%;
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  bottom: 40px;
+  margin-left: 20px;
+}
+
+.login_row,
+.logOut_row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.logo_login,
+.logo_logout {
+  margin-right: 20px;
+}
+
 @media (max-width: 800px) {
   .leftBar_main {
     position: absolute;

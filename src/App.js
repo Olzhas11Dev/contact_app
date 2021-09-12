@@ -3,6 +3,7 @@ import RightBars from "./components/RightBars";
 import {Route,Switch} from 'react-router-dom'
 import './style/app.css'
 import InputsSection from "./components/InputsSection";
+import LoginPage from './components/LoginPage'
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
             <Route exact path='/' component={RightBars} >
             </Route>
             <Route  exact path='/add' component={InputsSection} />
+            <Route exact path = '/login' component={LoginPage}/>
           </Switch>
     </div>
   );

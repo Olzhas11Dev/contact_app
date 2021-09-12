@@ -2,7 +2,7 @@ import React,{ useState,useEffect } from 'react'
 import '../style/left.css'
 import {Link, useHistory} from 'react-router-dom'
 import {RiContactsFill} from 'react-icons/ri'
-import {BiMessageSquareAdd} from 'react-icons/bi'
+import {BiMessageSquareAdd,BiLogInCircle,BiLogOutCircle} from 'react-icons/bi'
 import {GrMenu} from 'react-icons/gr'
 
 
@@ -54,6 +54,16 @@ const addId =(route)=>{
                     <div className="right_createContact">Create contact</div>
                 </div> 
             </Link>
+            <div className="loginSection">
+                <Link to="/login" className='login_row' >
+                    <BiLogInCircle className='logo_login' />
+                     <div>LogIn</div>
+                 </Link>
+                <div className='logOut_row'>
+                    <BiLogOutCircle className='logo_logout' />
+                <div>LogOut</div>
+                 </div>
+            </div>
             </div>
     )
 }
