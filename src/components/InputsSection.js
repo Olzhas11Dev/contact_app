@@ -4,10 +4,12 @@ import {useDispatch,useSelector} from 'react-redux'
 import {addToCard} from './features/cardSlice'
 import {increment} from './features/colorSlice'
 
-// const myColors = ['#E6783B','#2C8E88','#6B81AD','#2F223D']
+
 
 function InputsSection() {
 
+let dataStorage = JSON.parse(localStorage.getItem('user'))   //get Data from Local Sorage
+    
 const[name,setName] = useState('')
 const[email,setEmail] = useState('')
 const[phone,setPhone] = useState('')
@@ -59,7 +61,7 @@ const addData = ()=>{
 
     return (
         <div className='inputSection_main'>
-           <h4>Add a New Contact</h4> 
+           {dataStorage ? <h4>{dataStorage.name} add new contact</h4> : 'New contacts'}
            <div className="input_content">
                 <input style={{border:alert ? 'red 1px solid ': ''}} onChange={(e)=>setName(e.target.value)} type="text" placeholder='Enter Name' value={name}/>
                 <input onChange={(e)=>setEmail(e.target.value)} type="text" placeholder='Email' value={email}/>

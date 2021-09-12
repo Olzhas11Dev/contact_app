@@ -4,9 +4,16 @@ import {Link, useHistory} from 'react-router-dom'
 import {RiContactsFill} from 'react-icons/ri'
 import {BiMessageSquareAdd,BiLogInCircle,BiLogOutCircle} from 'react-icons/bi'
 import {GrMenu} from 'react-icons/gr'
+import { useSelector } from "react-redux";
+
 
 
 function LeftBar() {
+
+const selectStorage = useSelector(state => state.storage.initialData)  // to practicing Redux
+let dataStorage = JSON.parse(localStorage.getItem('user'))             
+
+
 const[activePage,setActivePage] = useState('/')      //By defalt it's stays on the first
 
 const[toggle,setToggle] = useState(false)
@@ -24,7 +31,7 @@ window.addEventListener('resize',closeMenu)
 const history = useHistory()
 useEffect(()=>{
     history.push('/')
-},[])
+},[history])
 
 const addId =(route)=>{
     if(route==='/'){
@@ -35,9 +42,7 @@ const addId =(route)=>{
         setToggle(false)
     }
 }
-
-
-   
+console.log(selectStorage ,'fromRedux')
     return (
         <div className='leftBar_main' id={toggle ? 'moveRight' : 'moveLeft'} >
              <div onClick={()=>setToggle(!toggle)} className="leftBar_logo"><GrMenu  className='logoMenu_open' /></div> 
@@ -59,6 +64,8 @@ const addId =(route)=>{
                     <BiLogInCircle className='logo_login' />
                      <div>LogIn</div>
                  </Link>
+              
+                {dataStorage ? dataStorage.name :null}
                 <div className='logOut_row'>
                     <BiLogOutCircle className='logo_logout' />
                 <div>LogOut</div>
