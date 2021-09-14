@@ -13,6 +13,7 @@ function LeftBar() {
 const selectStorage = useSelector(state => state.storage.initialData)  // to practicing Redux
 let dataStorage = JSON.parse(localStorage.getItem('user'))             
 
+const[toggleAuth,setToggleAuth] = useState(false)
 
 const[activePage,setActivePage] = useState('/')      //By defalt it's stays on the first
 
@@ -42,9 +43,17 @@ const addId =(route)=>{
         setToggle(false)
     }
 }
-console.log(selectStorage ,'fromRedux')
+
+
+const clearStore = () =>{
+    setToggleAuth(true)
+    localStorage.clear()
+}
+
+// console.log(selectStorage ,'fromRedux')
     return (
         <div className='leftBar_main' id={toggle ? 'moveRight' : 'moveLeft'} >
+             
              <div onClick={()=>setToggle(!toggle)} className="leftBar_logo"><GrMenu  className='logoMenu_open' /></div> 
            <h4>List Contacts</h4>
             <Link onClick={()=>addId('/')} to ="/" className="leftBar_contact">
@@ -59,17 +68,17 @@ console.log(selectStorage ,'fromRedux')
                     <div className="right_createContact">Create contact</div>
                 </div> 
             </Link>
+              {dataStorage ? dataStorage.name :null}
+            
             <div className="loginSection">
+                {dataStorage ?  <Link onClick={clearStore} to="/login" className='logOut_row'>
+                    <BiLogOutCircle className='logo_logout' />
+                <div>LogOut</div>
+                </Link> : 
                 <Link to="/login" className='login_row' >
                     <BiLogInCircle className='logo_login' />
                      <div>LogIn</div>
-                 </Link>
-              
-                {dataStorage ? dataStorage.name :null}
-                <div className='logOut_row'>
-                    <BiLogOutCircle className='logo_logout' />
-                <div>LogOut</div>
-                 </div>
+                 </Link>}
             </div>
             </div>
     )

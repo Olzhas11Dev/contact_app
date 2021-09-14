@@ -40,7 +40,7 @@ function LoginPage() {
        
         <div className='login_main' >
             <h4>Create Account</h4>  
-           <div className='welcom_user' > Hi {dataStorage ? dataStorage.name : null}</div>
+           <div className='welcom_user' >  {dataStorage ? dataStorage.name : null}</div>
             <div>
               
             <div>

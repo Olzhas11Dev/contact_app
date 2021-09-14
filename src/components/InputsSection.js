@@ -9,7 +9,7 @@ import {increment} from './features/colorSlice'
 function InputsSection() {
 
 let dataStorage = JSON.parse(localStorage.getItem('user'))   //get Data from Local Sorage
-    
+
 const[name,setName] = useState('')
 const[email,setEmail] = useState('')
 const[phone,setPhone] = useState('')
@@ -61,7 +61,7 @@ const addData = ()=>{
 
     return (
         <div className='inputSection_main'>
-           {dataStorage ? <h4>{dataStorage.name} add new contact</h4> : 'New contacts'}
+           {dataStorage ? <h4>{dataStorage.name} add new contact</h4> :   <h4>New contacts</h4>}
            <div className="input_content">
                 <input style={{border:alert ? 'red 1px solid ': ''}} onChange={(e)=>setName(e.target.value)} type="text" placeholder='Enter Name' value={name}/>
                 <input onChange={(e)=>setEmail(e.target.value)} type="text" placeholder='Email' value={email}/>
