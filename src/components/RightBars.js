@@ -7,9 +7,8 @@ import {AiOutlineCloseCircle,AiOutlineSearch} from 'react-icons/ai'
 
 function RightBars() {
     const cards = useSelector(state => state.cards.cardStorage)
+    const selectStorage = useSelector(state => state.storage.initialData)
     const [input,setInput] = useState('')
-
-    let dataStorage = JSON.parse(localStorage.getItem('user'))   //get Data from Local Sorage
 
     return (
         <div className='rightBar_main' >
@@ -22,7 +21,7 @@ function RightBars() {
                 </div>
                 <h4 className='right_total' > Total : {cards.length} contacts</h4>
            </div>
-           {dataStorage ? dataStorage.name : null}
+           {selectStorage.name}
             <div className="card_row">
                 {cards.filter(elem=>elem.firstName.toLowerCase().includes(input.toLowerCase()))   
                 .map((item)=>{

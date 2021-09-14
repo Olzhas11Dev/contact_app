@@ -8,8 +8,6 @@ function LoginPage() {
     // get from local
     let dataStorage = JSON.parse(localStorage.getItem('user'))
 
-
-    const [toggle,setToggle] = useState(false)
     const[nameReg,setNameReg] = useState('')
     const[emailReg,setEmailReg] = useState('')
     const[passwordReg,setPasswordReg] = useState('')
@@ -17,15 +15,14 @@ function LoginPage() {
       // saving the todos 
     const dispatch = useDispatch()  
     const handleAddToArray =()=>{
-        if(nameReg!==''){   
-            setToggle(true)                // If it's empty we don't send
+        if(nameReg!==''){                 // If it's empty we don't send
           let obj =  {
                     name: nameReg,
                     email:emailReg,
                     password:passwordReg
                 }
 
-         let myObj =  localStorage.setItem('user',JSON.stringify(obj))
+               localStorage.setItem('user',JSON.stringify(obj))
                 dispatch(addToLocal(obj))
           
                 //Clean LIst
@@ -51,7 +48,6 @@ function LoginPage() {
                  </div>
                  <button onClick={handleAddToArray} className='signUp_btn' >SignUp</button>
              </div> 
-        
             </div>
         </div>
     )

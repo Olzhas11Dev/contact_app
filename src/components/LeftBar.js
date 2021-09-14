@@ -4,19 +4,15 @@ import {Link, useHistory} from 'react-router-dom'
 import {RiContactsFill} from 'react-icons/ri'
 import {BiMessageSquareAdd,BiLogInCircle,BiLogOutCircle} from 'react-icons/bi'
 import {GrMenu} from 'react-icons/gr'
-import { useSelector } from "react-redux";
-
+import { useSelector,useDispatch } from "react-redux";
+import {addToLocal} from './features/storageSlice'
 
 
 function LeftBar() {
-
-const selectStorage = useSelector(state => state.storage.initialData)  // to practicing Redux
-let dataStorage = JSON.parse(localStorage.getItem('user'))             
-
-const[toggleAuth,setToggleAuth] = useState(false)
+const dispatch = useDispatch()
+const selectStorage = useSelector(state => state.storage.initialData)  
 
 const[activePage,setActivePage] = useState('/')      //By defalt it's stays on the first
-
 const[toggle,setToggle] = useState(false)
 
 let closeMenu=()=>{
@@ -46,8 +42,9 @@ const addId =(route)=>{
 
 
 const clearStore = () =>{
-    setToggleAuth(true)
     localStorage.clear()
+    dispatch(addToLocal({}))
+
 }
 
 // console.log(selectStorage ,'fromRedux')
@@ -68,10 +65,10 @@ const clearStore = () =>{
                     <div className="right_createContact">Create contact</div>
                 </div> 
             </Link>
-              {dataStorage ? dataStorage.name :null}
+              {selectStorage ? selectStorage.name :null}
             
             <div className="loginSection">
-                {dataStorage ?  <Link onClick={clearStore} to="/login" className='logOut_row'>
+                {selectStorage.name ?  <Link onClick={clearStore} to="/login" className='logOut_row'>
                     <BiLogOutCircle className='logo_logout' />
                 <div>LogOut</div>
                 </Link> : 
