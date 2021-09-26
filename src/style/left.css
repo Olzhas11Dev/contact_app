@@ -1,9 +1,10 @@
 .leftBar_main {
   min-width: 20%;
-  min-height: 100vh;
+  min-height: 120vh;
   background: #f8f5f4;
   padding-top: 20px;
   position: relative;
+  /* overflow-x: hidden; */
 }
 
 .leftBar_main h4 {
@@ -34,6 +35,11 @@
   height: 50px;
 }
 
+.loginSection a {
+  text-decoration: none;
+  color: #2f223d;
+}
+
 #active_menu {
   background: rgba(44, 142, 136, 0.2);
 }
@@ -46,15 +52,13 @@
 
 .leftBar_logo {
   position: absolute;
-  right: -40px;
+  right: -50px;
 }
 
 .loginSection {
   width: 100%;
   cursor: pointer;
-  position: absolute;
-  left: 0;
-  bottom: 40px;
+  margin-top: 430px;
   margin-left: 20px;
 }
 
@@ -86,7 +90,7 @@
   }
 
   #moveLeft {
-    left: -157px;
+    left: -170px;
     transition: 0.5s linear;
   }
 }

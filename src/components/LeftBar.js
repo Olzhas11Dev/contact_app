@@ -21,7 +21,15 @@ let closeMenu=()=>{
     } 
 }
 
+function listenScrollEvent(){
+    if (window.scrollY > 10) {
+        setToggle(false)
+    }
+    
+}
+
 window.addEventListener('resize',closeMenu)
+window.addEventListener('scroll',listenScrollEvent)
 
 // To refresh page '/' router
 
@@ -42,9 +50,9 @@ const addId =(route)=>{
 
 
 const clearStore = () =>{
+   
     localStorage.clear()
     dispatch(addToLocal({}))
-
 }
 
 // console.log(selectStorage ,'fromRedux')
@@ -52,7 +60,7 @@ const clearStore = () =>{
         <div className='leftBar_main' id={toggle ? 'moveRight' : 'moveLeft'} >
              
              <div onClick={()=>setToggle(!toggle)} className="leftBar_logo"><GrMenu  className='logoMenu_open' /></div> 
-           <h4>List Contacts</h4>
+           <h4>  {selectStorage ? selectStorage.name :null} List Contacts</h4>
             <Link onClick={()=>addId('/')} to ="/" className="leftBar_contact">
                 <div id={activePage==='/'? 'active_menu' : null} className="left_content_section"  >
                     <div className="left_contact" ><RiContactsFill className='leftBar_icon'/></div>
@@ -65,9 +73,8 @@ const clearStore = () =>{
                     <div className="right_createContact">Create contact</div>
                 </div> 
             </Link>
-              {selectStorage ? selectStorage.name :null}
-            
-            <div className="loginSection">
+             
+            <div className="loginSection" onClick={ ()=>setToggle(false)} >
                 {selectStorage.name ?  <Link onClick={clearStore} to="/login" className='logOut_row'>
                     <BiLogOutCircle className='logo_logout' />
                 <div>LogOut</div>

@@ -1,10 +1,39 @@
 .rightBar_main {
   width: 80%;
-  padding-top: 20px;
+  padding-top: 10px;
   background: #d9e9e5;
+}
+.leftBar_user {
+  position: relative;
+  left: 30px;
+  top: 10px;
+}
+
+.leftBar_logo_face {
+  width: 220px;
+  display: flex;
+}
+
+.left_logo_face {
+  padding: 10px;
+  background-color: rgb(230, 120, 59);
+  color: white;
+  border-radius: 40px;
+  margin-right: 20px;
+}
+
+.left_login_name {
+  font-weight: 700;
+}
+
+.cards_context_container {
+  width: 100%;
 }
 
 .rightBar_topDetails {
+  width: 92%;
+  margin: 0 auto;
+  margin-top: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -39,17 +68,14 @@
   margin-top: -30px;
 } */
 
-/* Media */
-
 .rightBar_input_section {
+  width: 100%;
   display: flex;
   align-items: center;
 }
 .rightInput {
   padding: 10px;
-  padding-left: 30px;
   outline: none;
-  margin-left: 22px;
   width: 260px;
   border-radius: 4px;
   border: none;
@@ -69,16 +95,50 @@
   opacity: 0.3 !important;
 }
 
+/* Media */
+
 @media (max-width: 800px) {
+  .right_total {
+    display: none;
+  }
+
+  .rightBar_topDetails {
+    width: 94%;
+    margin-bottom: 20px;
+  }
   .rightBar_main {
     width: 100%;
   }
+
+  .rightInput {
+    width: 94%;
+  }
+
+  .leftBar_user {
+    left: 71px;
+  }
+}
+
+@media (max-width: 600px) {
+  .rightBar_topDetails {
+    width: 65%;
+  }
+}
+
+@media (max-width: 500px) {
+  .right_total {
+    display: none;
+  }
+}
+
+@media (max-width: 375px) {
   .card_row {
-    width: 100%;
-    margin: 0 auto;
-    padding-left: 10px;
+    width: 80%;
   }
   .rightBar_topDetails {
-    padding-left: 50px;
+    width: 75%;
   }
+}
+
+@media (max-width: 320px) {
 }

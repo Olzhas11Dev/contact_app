@@ -58,7 +58,7 @@ const addData = ()=>{
 
     return (
         <div className='inputSection_main'>
-           {selectStorage ? <h4>{selectStorage.name} add new contact</h4> :   <h4>New contacts</h4>}
+           {selectStorage ? <h4>{selectStorage.name} Add new contact</h4> :   <h4>New contacts</h4>}
            <div className="input_content">
                 <input style={{border:alert ? 'red 1px solid ': ''}} onChange={(e)=>setName(e.target.value)} type="text" placeholder='Enter Name' value={name}/>
                 <input onChange={(e)=>setEmail(e.target.value)} type="text" placeholder='Email' value={email}/>

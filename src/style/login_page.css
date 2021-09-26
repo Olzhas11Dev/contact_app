@@ -18,6 +18,29 @@
   border-radius: 4px;
 }
 
+.welcom_user {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+
+.section_logo_face {
+  width: 220px;
+  display: flex;
+}
+
+.logo_face {
+  padding: 10px;
+  background-color: rgb(47, 34, 61);
+  color: white;
+  border-radius: 40px;
+  margin-right: 20px;
+}
+
+.welcome_login_name {
+  font-weight: 700;
+}
+
 .signUp_btn {
   width: 102%;
   height: 45px;
