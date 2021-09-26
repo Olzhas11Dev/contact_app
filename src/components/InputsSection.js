@@ -4,6 +4,7 @@ import {useDispatch,useSelector} from 'react-redux'
 import {addToCard} from './features/cardSlice'
 import {increment} from './features/colorSlice'
 
+
 function InputsSection() {
 
 const[name,setName] = useState('')
@@ -14,6 +15,7 @@ const[note,setNote] = useState('')
 const[notice,setNotice] = useState(false)
 const[alert,setAlert] = useState(false)
 
+const selectMaskStatus = useSelector(state=>state.maskStatus.changeBgStatus)
 const select = useSelector(state => state.increment.getColors)
 const selectStorage = useSelector(state => state.storage.initialData)    //select reux storage
 const dispatch = useDispatch()
@@ -58,6 +60,7 @@ const addData = ()=>{
 
     return (
         <div className='inputSection_main'>
+             <div className={selectMaskStatus ? 'mask' : null }></div>
            {selectStorage ? <h4>{selectStorage.name} Add new contact</h4> :   <h4>New contacts</h4>}
            <div className="input_content">
                 <input style={{border:alert ? 'red 1px solid ': ''}} onChange={(e)=>setName(e.target.value)} type="text" placeholder='Enter Name' value={name}/>

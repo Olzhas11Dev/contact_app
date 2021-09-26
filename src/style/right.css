@@ -56,17 +56,19 @@
   flex-wrap: wrap;
 }
 
-/* .mask {
+.mask {
   background-color: white;
-  opacity: 0.9 !important ;
+  opacity: 90% !important ;
   position: absolute;
   left: 0;
   top: 0;
   z-index: 55;
   width: 100%;
-  height: 100%;
+  min-height: 200%;
   margin-top: -30px;
-} */
+
+  /* transition: opacity 2s linear; */
+}
 
 .rightBar_input_section {
   width: 100%;

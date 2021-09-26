@@ -6,6 +6,7 @@ import {BiMessageSquareAdd,BiLogInCircle,BiLogOutCircle} from 'react-icons/bi'
 import {GrMenu} from 'react-icons/gr'
 import { useSelector,useDispatch } from "react-redux";
 import {addToLocal} from './features/storageSlice'
+import {makeMask} from './features/backGroundSlice'
 
 
 function LeftBar() {
@@ -24,6 +25,7 @@ let closeMenu=()=>{
 function listenScrollEvent(){
     if (window.scrollY > 10) {
         setToggle(false)
+        dispatch(makeMask(false))
     }
     
 }
@@ -42,9 +44,11 @@ const addId =(route)=>{
     if(route==='/'){
         setActivePage('/')
         setToggle(false)
+        dispatch(makeMask(false))
     } else {
         setActivePage('/add')
         setToggle(false)
+        dispatch(makeMask(false))
     }
 }
 
@@ -55,11 +59,14 @@ const clearStore = () =>{
     dispatch(addToLocal({}))
 }
 
-// console.log(selectStorage ,'fromRedux')
+const toggleIt =()=>{
+    setToggle(!toggle)
+    dispatch(makeMask(!toggle))
+}
+
     return (
         <div className='leftBar_main' id={toggle ? 'moveRight' : 'moveLeft'} >
-             
-             <div onClick={()=>setToggle(!toggle)} className="leftBar_logo"><GrMenu  className='logoMenu_open' /></div> 
+             <div onClick={()=>toggleIt()} className="leftBar_logo"><GrMenu  className='logoMenu_open' /></div> 
            <h4>  {selectStorage ? selectStorage.name :null} List Contacts</h4>
             <Link onClick={()=>addId('/')} to ="/" className="leftBar_contact">
                 <div id={activePage==='/'? 'active_menu' : null} className="left_content_section"  >
@@ -77,11 +84,11 @@ const clearStore = () =>{
             <div className="loginSection" onClick={ ()=>setToggle(false)} >
                 {selectStorage.name ?  <Link onClick={clearStore} to="/login" className='logOut_row'>
                     <BiLogOutCircle className='logo_logout' />
-                <div>LogOut</div>
+                <div onClick={()=> dispatch(makeMask(false))} >LogOut</div>
                 </Link> : 
                 <Link to="/login" className='login_row' >
                     <BiLogInCircle className='logo_login' />
-                     <div>LogIn</div>
+                     <div onClick={()=> dispatch(makeMask(false))} >LogIn</div>
                  </Link>}
             </div>
             </div>
