@@ -94,3 +94,22 @@
     transition: 0.5s linear;
   }
 }
+
+@media (max-width: 400px) {
+  .loginSection {
+    margin-top: 360px;
+  }
+  .section_logo_face {
+    width: 150px;
+  }
+
+  .welcom_user {
+    right: 0;
+  }
+}
+
+@media (max-width: 320px) {
+  .loginSection {
+    margin-top: 280px;
+  }
+}

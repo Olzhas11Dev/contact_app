@@ -4,6 +4,7 @@
 }
 
 .login_main h4 {
+  margin-top: 40px;
   font-size: 14px;
   margin-bottom: 40px;
 }
@@ -16,6 +17,7 @@
   outline: none;
   padding-left: 10px;
   border-radius: 4px;
+  -webkit-appearance: none;
 }
 
 .welcom_user {
@@ -42,7 +44,7 @@
 }
 
 .signUp_btn {
-  width: 102%;
+  width: 103%;
   height: 45px;
   border: none;
   background: #e6783b;
@@ -55,4 +57,20 @@
 .signUp_btn:hover {
   background: #db6526;
   cursor: pointer;
+}
+
+/* Media */
+@media (max-width: 800px) {
+  .login_main {
+    width: 80%;
+  }
+  .login_main h4 {
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 500px) {
+  .signUp_btn {
+    width: 104%;
+  }
 }
