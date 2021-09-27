@@ -78,15 +78,13 @@
 .rightInput {
   padding: 10px;
   outline: none;
-  width: 260px;
+  width: 270px;
   border-radius: 4px;
   border: none;
 }
 
 .rightBar_close {
-  position: relative;
-  bottom: 0;
-  left: -24px;
+  margin-left: -25px;
   opacity: 0.7 !important;
   cursor: pointer;
 }
@@ -143,4 +141,10 @@
 }
 
 @media (max-width: 320px) {
+  .rightBar_close {
+    left: 220px;
+  }
+}
+
+@media (max-height: 320px) {
 }

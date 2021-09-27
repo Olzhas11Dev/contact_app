@@ -31,6 +31,7 @@ function RightBars() {
                         <input onChange={(e)=>setInput(e.target.value)} className='rightInput' placeholder='Search...' type="text" value={input} />
                         {input && <AiOutlineCloseCircle onClick={()=>setInput('')} className='rightBar_close' />}
                     </div>
+                  
                     <h4 className='right_total' > Total : {cards.filter((card)=> card.firstName.toLowerCase().includes(input.toLowerCase())).length}   contacts</h4>
             </div>
                 <div className="card_row">
