@@ -67,6 +67,16 @@
   .login_main h4 {
     margin-top: 80px;
   }
+  .logo_face {
+    width: 10px;
+    height: 10px;
+  }
+  .logoUserRow {
+    font-size: 10px;
+  }
+  .section_logo_face {
+    width: 150px;
+  }
 }
 
 @media (max-width: 500px) {

@@ -13,6 +13,11 @@
   margin-bottom: 60px;
 }
 
+.added_name {
+  margin-bottom: 20px;
+  padding-left: 10px;
+}
+
 .leftBar_icon,
 .left_addIcons {
   margin-right: 20px;

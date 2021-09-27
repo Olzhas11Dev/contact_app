@@ -67,7 +67,8 @@ const toggleIt =()=>{
     return (
         <div className='leftBar_main' id={toggle ? 'moveRight' : 'moveLeft'} >
              <div onClick={()=>toggleIt()} className="leftBar_logo"><GrMenu  className='logoMenu_open' /></div> 
-           <h4>  {selectStorage ? selectStorage.name :null} List Contacts</h4>
+           <h4>  List Contacts</h4>
+           <div className='added_name' >{selectStorage ? selectStorage.name :null} </div>
             <Link onClick={()=>addId('/')} to ="/" className="leftBar_contact">
                 <div id={activePage==='/'? 'active_menu' : null} className="left_content_section"  >
                     <div className="left_contact" ><RiContactsFill className='leftBar_icon'/></div>

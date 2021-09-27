@@ -54,6 +54,8 @@
   margin: auto;
   display: flex;
   flex-wrap: wrap;
+  height: 500px;
+  overflow-y: scroll;
 }
 
 .mask {
