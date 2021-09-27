@@ -21,7 +21,7 @@ function RightBars() {
                        <IoMdContacts className='left_logo_face' /> 
                         <div className='logoUserRow' > 
                             <div className='left_login_name' > {selectStorage.name}</div>
-                            <div>How there!!!</div>
+                            <div>Hi there!!!</div>
                         </div> 
                   </div> :null}
             </div>
