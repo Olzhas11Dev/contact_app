@@ -58,7 +58,7 @@
 
 .mask {
   background-color: white;
-  opacity: 90% !important ;
+  opacity: 0.5 !important ;
   position: absolute;
   left: 0;
   top: 0;
