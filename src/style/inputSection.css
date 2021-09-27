@@ -24,6 +24,7 @@
   padding-left: 10px;
   border-radius: 4px;
   -webkit-appearance: none;
+  font-size: 14px;
 }
 
 .input_content button {
@@ -63,9 +64,5 @@
 
   .inputSection_main h4 {
     margin-top: 40px;
-  }
-
-  .input_content input {
-    font-size: 10px;
   }
 }
