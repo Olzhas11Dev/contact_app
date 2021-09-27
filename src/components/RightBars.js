@@ -41,7 +41,7 @@ function RightBars() {
                     })}  
                 </div> 
             </div>
-            <div className={selectMaskStatus ? 'mask' : null }></div>
+            {/* <div className={selectMaskStatus ? 'mask' : null }></div> */}
         </div>
     )
 }
