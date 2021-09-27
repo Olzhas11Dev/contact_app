@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import '../style/right.css'
 import Card from './Card'
 import { useSelector } from "react-redux";
-import {AiOutlineCloseCircle,AiOutlineSearch} from 'react-icons/ai'
+import {AiOutlineCloseCircle} from 'react-icons/ai'
 import {IoMdContacts} from 'react-icons/io'
 
 function RightBars() {
@@ -14,8 +14,6 @@ function RightBars() {
     
     return (
         <div className='rightBar_main' >
-           
-            <div className={selectMaskStatus ? 'mask' : null }></div>
             <div className='leftBar_user' >
                   {selectStorage.name ?
                    <div className='leftBar_logo_face' >
@@ -43,7 +41,7 @@ function RightBars() {
                     })}  
                 </div> 
             </div>
-            
+            <div className={selectMaskStatus ? 'mask' : null }></div>
         </div>
     )
 }

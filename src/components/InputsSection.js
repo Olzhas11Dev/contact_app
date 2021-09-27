@@ -14,7 +14,6 @@ const[address,setAddress] = useState('')
 const[note,setNote] = useState('')
 const[notice,setNotice] = useState(false)
 const[alert,setAlert] = useState(false)
-
 const selectMaskStatus = useSelector(state=>state.maskStatus.changeBgStatus)
 const select = useSelector(state => state.increment.getColors)
 const selectStorage = useSelector(state => state.storage.initialData)    //select reux storage
