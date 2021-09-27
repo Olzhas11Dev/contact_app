@@ -64,4 +64,8 @@
   .inputSection_main h4 {
     margin-top: 40px;
   }
+
+  .input_content input {
+    font-size: 10px;
+  }
 }
