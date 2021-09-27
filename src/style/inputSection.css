@@ -23,6 +23,7 @@
   outline: none;
   padding-left: 10px;
   border-radius: 4px;
+  -webkit-appearance: none;
 }
 
 .input_content button {

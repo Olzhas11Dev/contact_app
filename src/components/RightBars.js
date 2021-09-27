@@ -14,6 +14,7 @@ function RightBars() {
     
     return (
         <div className='rightBar_main' >
+            <div className={selectMaskStatus ? 'mask' : null }></div>
             <div className='leftBar_user' >
                   {selectStorage.name ?
                    <div className='leftBar_logo_face' >
@@ -41,7 +42,7 @@ function RightBars() {
                     })}  
                 </div> 
             </div>
-            {/* <div className={selectMaskStatus ? 'mask' : null }></div> */}
+            
         </div>
     )
 }
